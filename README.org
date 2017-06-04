@@ -1,2 +1,18 @@
-# whop-played-spiderman
-Who Played Spiderman? Answering Questions With Data assignment
+* Who Played Spiderman? Answering Questions With Data assignment
+
+* Requirements:
+- Python 2 or 3
+- Python libraries as specified in requirements.
+
+* Installation
+- pip install -r requirements.txt
+- python ./app.py
+
+* Notes
+This is a demo for a class lesson on using data to perform and answer
+"who" and "when" queries. The code is very rudimentary and doesn't
+always find the right answer (which is desired due to the lesson and
+topic) and will probably crash now and again.
+
+
+

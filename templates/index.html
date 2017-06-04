@@ -1,0 +1,71 @@
+<!doctype>
+
+<head>
+  <link rel="stylesheet"
+  href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"
+</head>
+<body>
+
+<a href="https://github.com/zamansky/finding_answers_with_data"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  <div class="pure-g">
+    <div class="pure-u-2-24">
+    </div>
+  <div class="pure-u-20-24">  <h1>Using data to provide answers</h1>
+  
+
+  <p>
+    Enter a query. It must start with <b>who</b> or <b>when</b>. When
+    you submit the query, the server will find about 100 pages and
+    look for the most common names (for who) or dates (for when).
+
+    Names are defined as two words each capitalized and dates are in
+    the form Month Day, Year, so <b>Oct 10, 1955</b> is valid but then
+    so is <b>Thomas 22, 1234</b>.
+
+    This isn't meant to be perfect, just to show how using lots of
+  data can get interesting and useful answers.
+  </p>
+  <p>
+    Try these, some work, some don't; 
+    <ul>
+      <li>who played thor</li>
+      <li>who shot Ronald Reagan</li>
+      <li>when was D-Day</li>
+      <li>when was the Yom Kippur war</li>
+      <li>when was Elvis born</li>
+      
+    </ul>
+
+    But when it doesn't work, if you look at the "guesses," the answer
+    is generally there. The biggest problem is that we don't identify
+    names well.
+  </p> 
+
+  <h3>Note: This is slow and will probably crash at times </h3>
+  <form method="post">
+    <label>Query:</label>
+    <input type="text"  name='q' size=100 placeholder="Enter Query">
+    <button type="submit" id="submit" class="pure-button pure-button-primary">Submit</button>
+  </form>
+
+  <div id="answer">
+
+    {% if ans %}
+    <h3>Query: {{q}}</h3>
+    <h3>I think the answer is: {{ ans }} </h3>
+    {% endif %}
+  </div>
+  <div id="guesses">
+    {% if guesses %}
+    <h3>Guesses</h3>
+    <ol>
+      {% for g in guesses %}
+      <li>{{g}}</li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </div>
+  </div>
+  </div>
+</body>
